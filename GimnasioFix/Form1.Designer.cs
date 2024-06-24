@@ -1,4 +1,7 @@
-﻿namespace GimnasioFix
+﻿using System;
+using System.Windows.Forms;
+
+namespace GimnasioFix
 {
     partial class Form1
     {
@@ -18,6 +21,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+            Environment.Exit(0);
         }
 
         #region Código generado por el Diseñador de Windows Forms
@@ -47,6 +51,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage_clientDetail = new System.Windows.Forms.TabPage();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -75,6 +82,7 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.tabPage_clientList = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -91,16 +99,11 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView_Clients = new System.Windows.Forms.DataGridView();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button7 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.dataGridView_Pagos = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -115,13 +118,15 @@
             this.label21 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.dataGridView_Pagos = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl_mainClient.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -174,7 +179,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1894, 1004);
-            this.tabPage1.TabIndex = 2;
+            this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro de Ingresos";
             // 
             // label10
@@ -182,7 +187,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Linen;
-            this.label10.Location = new System.Drawing.Point(1329, 535);
+            this.label10.Location = new System.Drawing.Point(1332, 538);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 20);
             this.label10.TabIndex = 14;
@@ -195,7 +200,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Linen;
-            this.label9.Location = new System.Drawing.Point(1329, 481);
+            this.label9.Location = new System.Drawing.Point(1332, 484);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 20);
             this.label9.TabIndex = 13;
@@ -207,7 +212,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Linen;
-            this.label8.Location = new System.Drawing.Point(1329, 808);
+            this.label8.Location = new System.Drawing.Point(1332, 811);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 20);
             this.label8.TabIndex = 12;
@@ -219,7 +224,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Linen;
-            this.label7.Location = new System.Drawing.Point(1329, 124);
+            this.label7.Location = new System.Drawing.Point(1332, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(309, 20);
             this.label7.TabIndex = 11;
@@ -232,7 +237,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Linen;
-            this.label6.Location = new System.Drawing.Point(1329, 845);
+            this.label6.Location = new System.Drawing.Point(1332, 848);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 20);
             this.label6.TabIndex = 10;
@@ -262,8 +267,8 @@
             // 
             this.lblDay.AutoSize = true;
             this.lblDay.Font = new System.Drawing.Font("Myanmar Text", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDay.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblDay.Location = new System.Drawing.Point(210, 776);
+            this.lblDay.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblDay.Location = new System.Drawing.Point(213, 779);
             this.lblDay.Name = "lblDay";
             this.lblDay.Size = new System.Drawing.Size(378, 50);
             this.lblDay.TabIndex = 7;
@@ -275,8 +280,8 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Myanmar Text", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.Violet;
-            this.lblTime.Location = new System.Drawing.Point(210, 735);
+            this.lblTime.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblTime.Location = new System.Drawing.Point(213, 741);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(592, 50);
             this.lblTime.TabIndex = 6;
@@ -289,11 +294,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Myanmar Text", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.Gold;
-            this.lblName.Location = new System.Drawing.Point(192, 634);
+            this.lblName.Location = new System.Drawing.Point(195, 637);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(1020, 142);
+            this.lblName.Size = new System.Drawing.Size(808, 142);
             this.lblName.TabIndex = 5;
-            this.lblName.Text = "Bienvenid@ a X Gimnasio";
+            this.lblName.Text = "Bienvenid@ a JL FIT";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblName.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -329,14 +334,17 @@
             this.pictureBox2.Location = new System.Drawing.Point(1333, 147);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(491, 320);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(213, 124);
+            this.pictureBox1.Image = global::GimnasioFix.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(410, 137);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(999, 507);
+            this.pictureBox1.Size = new System.Drawing.Size(433, 391);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -380,6 +388,50 @@
             this.tabPage_clientDetail.TabIndex = 1;
             this.tabPage_clientDetail.Text = " Registro de usuario";
             this.tabPage_clientDetail.Click += new System.EventHandler(this.tabPage_clientDetail_Click);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.DimGray;
+            this.radioButton3.Checked = true;
+            this.radioButton3.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.radioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gold;
+            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.ForeColor = System.Drawing.Color.Linen;
+            this.radioButton3.Location = new System.Drawing.Point(707, 679);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(68, 20);
+            this.radioButton3.TabIndex = 35;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "1 mes";
+            this.radioButton3.UseVisualStyleBackColor = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.Linen;
+            this.radioButton2.Location = new System.Drawing.Point(592, 679);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(102, 20);
+            this.radioButton2.TabIndex = 34;
+            this.radioButton2.Text = "2 semanas";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.ForeColor = System.Drawing.Color.Linen;
+            this.radioButton1.Location = new System.Drawing.Point(489, 679);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(94, 20);
+            this.radioButton1.TabIndex = 33;
+            this.radioButton1.Text = "1 semana";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -495,10 +547,11 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::GimnasioFix.Properties.Resources.logo;
             this.pictureBox3.Location = new System.Drawing.Point(1220, 142);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(423, 423);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
             // 
@@ -711,6 +764,17 @@
             this.tabPage_clientList.TabIndex = 0;
             this.tabPage_clientList.Text = "Lista Clientes";
             // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(1421, 545);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(339, 47);
+            this.button7.TabIndex = 37;
+            this.button7.Text = "Agregar subscripcion";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(1424, 423);
@@ -793,6 +857,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = global::GimnasioFix.Properties.Resources.logo;
             this.pictureBox4.Location = new System.Drawing.Point(1421, 624);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(336, 336);
@@ -879,31 +944,6 @@
             this.labelSearch.TabIndex = 0;
             this.labelSearch.Text = "Buscar Cliente:";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1894, 1004);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Reportes";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1421, 545);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(339, 47);
-            this.button7.TabIndex = 37;
-            this.button7.Text = "Agregar subscripcion";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.DimGray;
@@ -931,78 +971,46 @@
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Agregar pago";
             // 
-            // tabPage4
+            // textBox13
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.DimGray;
-            this.tabPage4.Controls.Add(this.comboBox3);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.textBox10);
-            this.tabPage4.Controls.Add(this.dataGridView_Pagos);
-            this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1894, 1004);
-            this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "Pagos";
+            this.textBox13.Location = new System.Drawing.Point(114, 267);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(336, 22);
+            this.textBox13.TabIndex = 50;
             // 
-            // comboBox3
+            // label22
             // 
-            this.comboBox3.CausesValidation = false;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox3.Items.AddRange(new object[] {
-            "N° de Cuenta",
-            "Nombre",
-            "Apellido",
-            "Telefono"});
-            this.comboBox3.Location = new System.Drawing.Point(404, 102);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(125, 24);
-            this.comboBox3.TabIndex = 12;
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Linen;
+            this.label22.Location = new System.Drawing.Point(109, 230);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(172, 25);
+            this.label22.TabIndex = 49;
+            this.label22.Text = "Numero de cuenta";
             // 
-            // button8
+            // button15
             // 
-            this.button8.Location = new System.Drawing.Point(535, 102);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 24);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "Buscar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(235, 583);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(168, 49);
+            this.button15.TabIndex = 48;
+            this.button15.Text = "Aceptar";
+            this.button15.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // button16
             // 
-            this.textBox10.Location = new System.Drawing.Point(50, 102);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(348, 22);
-            this.textBox10.TabIndex = 10;
-            // 
-            // dataGridView_Pagos
-            // 
-            this.dataGridView_Pagos.AllowUserToAddRows = false;
-            this.dataGridView_Pagos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_Pagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Pagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Pagos.Location = new System.Drawing.Point(50, 132);
-            this.dataGridView_Pagos.Name = "dataGridView_Pagos";
-            this.dataGridView_Pagos.ReadOnly = true;
-            this.dataGridView_Pagos.RowHeadersWidth = 51;
-            this.dataGridView_Pagos.RowTemplate.Height = 24;
-            this.dataGridView_Pagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Pagos.Size = new System.Drawing.Size(1346, 1022);
-            this.dataGridView_Pagos.TabIndex = 9;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Linen;
-            this.label17.Location = new System.Drawing.Point(47, 85);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(96, 16);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Buscar Cliente:";
+            this.button16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(105, 583);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(123, 49);
+            this.button16.TabIndex = 47;
+            this.button16.Text = "Cancelar";
+            this.button16.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
@@ -1161,90 +1169,92 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 33;
             // 
-            // button15
+            // tabPage4
             // 
-            this.button15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(235, 583);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(168, 49);
-            this.button15.TabIndex = 48;
-            this.button15.Text = "Aceptar";
-            this.button15.UseVisualStyleBackColor = true;
+            this.tabPage4.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage4.Controls.Add(this.comboBox3);
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.textBox10);
+            this.tabPage4.Controls.Add(this.dataGridView_Pagos);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1894, 1004);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Pagos";
             // 
-            // button16
+            // comboBox3
             // 
-            this.button16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(105, 583);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(123, 49);
-            this.button16.TabIndex = 47;
-            this.button16.Text = "Cancelar";
-            this.button16.UseVisualStyleBackColor = true;
+            this.comboBox3.CausesValidation = false;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox3.Items.AddRange(new object[] {
+            "N° de Cuenta",
+            "Nombre",
+            "Apellido",
+            "Telefono"});
+            this.comboBox3.Location = new System.Drawing.Point(404, 102);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(125, 24);
+            this.comboBox3.TabIndex = 12;
             // 
-            // textBox13
+            // button8
             // 
-            this.textBox13.Location = new System.Drawing.Point(114, 267);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(336, 22);
-            this.textBox13.TabIndex = 50;
+            this.button8.Location = new System.Drawing.Point(535, 102);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 24);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Buscar";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // textBox10
             // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Linen;
-            this.label22.Location = new System.Drawing.Point(109, 230);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(172, 25);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "Numero de cuenta";
+            this.textBox10.Location = new System.Drawing.Point(50, 102);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(348, 22);
+            this.textBox10.TabIndex = 10;
             // 
-            // radioButton1
+            // dataGridView_Pagos
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.Linen;
-            this.radioButton1.Location = new System.Drawing.Point(489, 679);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(94, 20);
-            this.radioButton1.TabIndex = 33;
-            this.radioButton1.Text = "1 semana";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.dataGridView_Pagos.AllowUserToAddRows = false;
+            this.dataGridView_Pagos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_Pagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Pagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Pagos.Location = new System.Drawing.Point(50, 132);
+            this.dataGridView_Pagos.Name = "dataGridView_Pagos";
+            this.dataGridView_Pagos.ReadOnly = true;
+            this.dataGridView_Pagos.RowHeadersWidth = 51;
+            this.dataGridView_Pagos.RowTemplate.Height = 24;
+            this.dataGridView_Pagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Pagos.Size = new System.Drawing.Size(1346, 1022);
+            this.dataGridView_Pagos.TabIndex = 9;
             // 
-            // radioButton2
+            // label17
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.Linen;
-            this.radioButton2.Location = new System.Drawing.Point(592, 679);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 20);
-            this.radioButton2.TabIndex = 34;
-            this.radioButton2.Text = "2 semanas";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Linen;
+            this.label17.Location = new System.Drawing.Point(47, 85);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(96, 16);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Buscar Cliente:";
             // 
-            // radioButton3
+            // tabPage2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.DimGray;
-            this.radioButton3.Checked = true;
-            this.radioButton3.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.radioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gold;
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.Linen;
-            this.radioButton3.Location = new System.Drawing.Point(707, 679);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(68, 20);
-            this.radioButton3.TabIndex = 35;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "1 mes";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1894, 1004);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Reportes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -1374,6 +1384,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label22;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
